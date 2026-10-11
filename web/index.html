@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Auren Death • Controle administrativo</title><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
+<body>
+<div id="app" class="shell" hidden>
+  <aside class="sidebar">
+    <a class="brand" href="#"><svg viewBox="0 0 40 36" aria-hidden="true"><path d="M3 30 20 3 37 30H26l-6-10-6 10Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M15 30h10" stroke="currentColor" stroke-width="2.5"/></svg><span>APEX<span class="brand-sub">PERMANENT DEATH</span></span></a>
+    <div class="workspace"><span class="workspace-symbol">P</span><div>Controle de artefatos<small>Administração da cidade</small></div><span class="lock">⌑</span></div>
+    <div class="nav-label">CENTRAL DE CONTROLE</div>
+    <nav aria-label="Navegação principal">
+      <button data-page="overview" class="nav active"><span data-icon="grid"></span>Visão geral</button>
+      <button data-page="weapons" class="nav"><span data-icon="crosshair"></span>Revólveres<span id="nav-count" class="nav-count">0</span></button>
+      <button data-page="suspensions" class="nav"><span data-icon="clock"></span>Suspensões</button>
+      <button data-page="settings" class="nav"><span data-icon="sliders"></span>Efeitos e regras</button>
+      <button data-page="history" class="nav"><span data-icon="list"></span>Histórico</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="connection"><i></i><span id="connection-label">Servidor conectado</span></div><div class="profile"><div class="avatar">AD</div><div>Administrador<small>Acesso restrito</small></div><span data-icon="shield"></span></div><small class="version">Auren Death <span>v1.1.3</span></small></div>
+  </aside>
+  <div class="main">
+    <header class="topbar"><div><span class="breadcrumb">Auren Death</span><span class="slash">/</span><span id="breadcrumb">Visão geral</span></div><div class="topbar-actions"><span class="preview-label" id="preview-label" hidden>PRÉVIA LOCAL</span><button class="icon-button" id="refresh" title="Atualizar" aria-label="Atualizar"><span data-icon="refresh"></span></button><span class="divider"></span><button class="icon-button" id="close" title="Fechar • ESC" aria-label="Fechar painel"><span data-icon="x"></span></button></div></header>
+    <main id="content"></main>
+    <footer><span><i class="small-dot"></i> Apenas administradores autorizados</span><span id="sync-time">Sincronizando…</span></footer>
+  </div>
+</div>
+<dialog id="modal"><form id="modal-form"><div class="modal-heading"><div><span class="eyebrow">CONTROLE DE ARSENAL</span><h2 id="modal-title">Emitir revólver</h2></div><button type="button" id="modal-close" class="icon-button" aria-label="Fechar diálogo">✕</button></div><div id="modal-content"></div><div class="modal-footer"><button type="button" class="button secondary" id="modal-cancel">Cancelar</button><button class="button primary" type="submit" id="modal-submit">Confirmar</button></div></form></dialog>
+<div id="toast" role="status" hidden></div>
+<div id="suspension-hud" hidden><span class="hud-symbol">◷</span><div><small>PENITÊNCIA</small><strong>Você está incapacitado</strong><span>Aguarde o fim da suspensão</span></div><b id="suspension-time">60:00</b></div>
+<div id="sentence" hidden><span class="eyebrow">SUA HISTÓRIA CHEGOU AO FIM</span><h1>Morte permanente.</h1><p id="sentence-message"></p><span class="sentence-rule"></span><small>Uma nova história começa com você.</small></div>
+</body></html>
+
